@@ -13,4 +13,22 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
+module.exports = [
+    // This is the base configuration
+  {
+    files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
+    plugins: {
+      '@next/next': nextPlugin,
+    },
+    rules: {
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs['core-web-vitals'].rules,
+    },
+  },
+
+  // This is the Prettier config. It disables style rules.
+  // It MUST be the last item in the array.
+  prettierConfig,
+]
+
 export default eslintConfig;
