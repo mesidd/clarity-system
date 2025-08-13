@@ -13,7 +13,7 @@ export function SignOutButton(){
   }
   
   return (
-    <Button variant={"outline"} onClick={handleSignOut}>Sign Out</Button>
+    <Button variant={"outline"} onClick={handleSignOut} className="font-semibold cursor-pointer">Sign Out</Button>
   )
 
 }
