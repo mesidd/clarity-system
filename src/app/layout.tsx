@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 import { ReactNode } from 'react'
 
@@ -8,9 +9,16 @@ export const metaData = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body>
+        <ThemeProvider
+        attribute='class'
+        defaultTheme='system'
+        enableSystem
+        disableTransitionOnChange
+        >
         {children}
+        </ThemeProvider>
       </body>
     </html>
   )
